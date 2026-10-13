@@ -1,0 +1,5 @@
+name: astrbot_plugin_nezha
+display_name: 哪吒探针
+desc: 接入哪吒 v0 魔改版（nezha-zero 系）面板：概况 / 列表 / 分组 / 单机详情，二次元玻璃拟态高清卡片，支持分组、延迟监控与权限控制。
+version: v1.1.0
+author: serenite

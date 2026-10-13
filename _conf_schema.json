@@ -1,0 +1,94 @@
+{
+  "base_url": {
+    "description": "哪吒面板地址",
+    "type": "string",
+    "hint": "必填。只填站点根地址，例如 https://nz.example.com（不要带 /api 或 /api/v1，带了会自动去掉）",
+    "default": "",
+    "obvious_hint": true
+  },
+  "api_token": {
+    "description": "API Token",
+    "type": "string",
+    "hint": "必填。面板「API Token」生成的凭证，作为 Authorization 请求头直传；留空会提示未配置",
+    "default": "",
+    "obvious_hint": true
+  },
+  "timeout": {
+    "description": "请求超时（秒）",
+    "type": "float",
+    "default": 10
+  },
+  "online_threshold": {
+    "description": "在线判定阈值（秒）",
+    "type": "int",
+    "hint": "面板判定在线的规则是「距上次上报不超过该秒数」，官方主题为 20 秒",
+    "default": 20
+  },
+  "show_hidden": {
+    "description": "显示隐藏节点",
+    "type": "bool",
+    "hint": "即面板里的「游客不可见」节点；关闭后这些节点不会出现在卡片中",
+    "default": true
+  },
+  "output_mode": {
+    "description": "输出样式",
+    "type": "string",
+    "hint": "card=高清图片卡片，text=纯文本（NapCat 发送图片失败时可临时切到 text）",
+    "default": "card",
+    "options": ["card", "text"],
+    "obvious_hint": true
+  },
+  "image_quality": {
+    "description": "卡片清晰度",
+    "type": "string",
+    "hint": "normal=960px 宽 · high=1248px · ultra=1728px（实测约 50 节点列表 PNG：0.57 / 1.63 / 3.04 MB）",
+    "default": "high",
+    "options": ["normal", "high", "ultra"],
+    "obvious_hint": true
+  },
+  "enable_monitor": {
+    "description": "单机详情显示延迟监控",
+    "type": "bool",
+    "hint": "读取魔改版的 /api/v1/monitor/<id>，展示延迟、丢包率（每个服务器一次请求）",
+    "default": true
+  },
+  "monitor_in_list": {
+    "description": "列表 / 分组卡片显示延迟列",
+    "type": "bool",
+    "hint": "会为每台在线服务器各发一次监控请求，节点多时较慢，默认关闭",
+    "default": false
+  },
+  "monitor_points": {
+    "description": "延迟统计采样点数",
+    "type": "int",
+    "hint": "取最近多少次探测结果计算平均 / 最好 / 最差与丢包率",
+    "default": 60
+  },
+  "max_list_rows": {
+    "description": "列表最多显示节点数",
+    "type": "int",
+    "hint": "0 表示不限制；超出部分在卡片与文本中都会省略，避免刷屏",
+    "default": 60
+  },
+  "permission_mode": {
+    "description": "指令使用权限",
+    "type": "string",
+    "hint": "all=所有人；admin=仅 AstrBot 管理员；whitelist=仅白名单用户（管理员始终可用）",
+    "default": "all",
+    "options": ["all", "admin", "whitelist"],
+    "obvious_hint": true
+  },
+  "allowed_users": {
+    "description": "白名单用户 ID",
+    "type": "string",
+    "hint": "permission_mode=whitelist 时生效。多个 ID 用英文逗号或换行分隔，可用 /nz sid 查看自己的 ID",
+    "default": ""
+  },
+  "bg_url": {
+    "description": "卡片背景图接口",
+    "type": "string",
+    "hint": "二次元随机图地址，默认 https://mygo.pp.ua/ ，每次渲染随机一张；留空则用默认值",
+    "default": "https://mygo.pp.ua/",
+    "obvious_hint": true
+  }
+}
